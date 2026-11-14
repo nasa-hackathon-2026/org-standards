@@ -11,6 +11,9 @@ NASA Hackathon 2026 org 的 AI agent 設定模板，涵蓋 Claude Code 與 Codex
 | `docs/agents/workflow.md` | 以 Matt skills 為基準的開發流程 |
 | `docs/agents/delivery.md` | 追蹤、交接格式、worktree 與 Git、升級規則 |
 | `docs/agents/issue-tracker.md`、`triage-labels.md`、`domain.md` | Matt skills 的專案設定（已預先完成） |
+| `GLOSSARY.md` | 專案用語表（`grill-with-docs`、`domain-modeling` 維護，格式見 Matt skills 的 GLOSSARY-FORMAT） |
+| `docs/adr/` | 架構決策紀錄，檔名 `0001-slug.md`（先放 `.gitkeep`，第一個 ADR 出現後可刪） |
+| `.out-of-scope/` | `triage` 記錄被拒絕的需求（先放 `.gitkeep`） |
 | `docs/agents/memory.md` | Basic Memory 的位置、時機、格式 |
 | `docs/agents/dev-env.md` | Python（uv）、Rust（cargo）的環境與驗證指令 |
 | `docs/agents/roles.md` | planner、worker、reviewer 三個標準角色 |
