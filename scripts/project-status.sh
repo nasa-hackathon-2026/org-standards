@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # 把 issue 或 PR 加進 org Project「開發看板」並設定欄位（可重複執行）。
 # 用法：scripts/project-status.sh <issue 或 PR 的 URL> [欄位=值]...
-# 例：  scripts/project-status.sh https://github.com/nasa-hackathon-2026/<repo>/issues/3 Status="In progress" Priority=P1 Size=S Sprint="Sprint 1"
-# 欄位：Status、Priority、Size、Sprint（值必須與看板上的選項名稱完全相同）
+# 例：  scripts/project-status.sh https://github.com/nasa-hackathon-2026/<repo>/issues/3 Status="In progress" Priority=P1 Size=S
+# 欄位：Status、Priority、Size（值必須與看板上的選項名稱完全相同）
 set -euo pipefail
 
 OWNER="nasa-hackathon-2026"

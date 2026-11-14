@@ -7,7 +7,7 @@ Issue 與 spec 放在各 repo 的 GitHub Issues，用 `gh` CLI 操作。跨 repo
 ## 基本操作
 
 - **建立**：`gh issue create --title "..." --body "..." --label "..."`，多行內容用 heredoc。
-- **建立並設定類別與上層**：`gh issue create --type Task --parent <上層編號或 URL> --title "..." --body "..."`。
+- **建立並設定上層**：`gh issue create --parent <上層編號或 URL> --title "..." --body "..."`。
 - **讀取**：`gh issue view <number> --json number,title,body,labels,comments`
 - **列出**：`gh issue list --state open --json number,title,body,labels,comments --jq '[.[] | {number, title, body, labels: [.labels[].name], comments: [.comments[].body]}]'`，依需要加 `--label`、`--state`。
 - **留言**：`gh issue comment <number> --body "..."`

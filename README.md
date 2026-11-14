@@ -15,7 +15,7 @@ NASA Hackathon 2026 org 的 AI agent 設定模板，涵蓋 Claude Code 與 Codex
 | `docs/agents/dev-env.md` | Python（uv）、Rust（cargo）的環境與驗證指令 |
 | `docs/agents/roles.md` | planner、worker、reviewer 三個標準角色 |
 | `.claude/agents/`、`.codex/` | 三個標準 agent 的設定 |
-| `.github/` | Issue 表單、PR 範本、標籤清單 |
+| `.github/` | ticket 表單、PR 範本、標籤清單 |
 | `scripts/` | `sync-labels.sh` 同步標籤、`project-status.sh` 設定看板欄位 |
 
 ## 建新 repo
@@ -29,12 +29,7 @@ cd <名稱> && scripts/sync-labels.sh
 
 ## org 前置設定
 
-模板假設 org 已有下列設定；缺哪項，對應的指令或表單就不能用。
-
-| 項目 | 用在 |
-|---|---|
-| 七個 Issue type：Task、Bug、Feature、Spec、Decision、Research、Chore | `gh issue create --type`、Issue 表單 |
-| Project「開發看板」（第 1 號），欄位 Status、Priority、Size、Sprint | `scripts/project-status.sh` |
+模板假設 org 已有 Project「開發看板」（第 1 號），欄位 Status、Priority、Size；沒有的話 `scripts/project-status.sh` 不能用。已於 2026-11-14 建立。
 
 ## 相關
 - Skills：[mattpocock/skills](https://github.com/mattpocock/skills)，Claude Code 用 plugin 安裝

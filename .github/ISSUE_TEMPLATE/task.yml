@@ -1,6 +1,5 @@
 name: Task
 description: 一張可獨立完成的 tracer-bullet ticket
-type: Task
 body:
   - type: input
     id: parent

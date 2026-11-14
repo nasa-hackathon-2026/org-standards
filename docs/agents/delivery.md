@@ -15,29 +15,18 @@ planner、worker、reviewer 之間怎麼交接，工作怎麼記錄，程式碼�
 | Status | Backlog、Ready、In progress、In review、Done |
 | Priority | P0 阻塞或緊急、P1 本 sprint 必做、P2 有空就做、P3 暫不處理 |
 | Size | XS、S、M、L、XL（XL 必須拆成多張 ticket） |
-| Sprint | 依比賽時程在看板上建立，名稱與腳本參數一致 |
 
 用腳本設定欄位（會自動把 issue 或 PR 加進看板，可重複執行）：
 
 ```bash
-scripts/project-status.sh <issue 或 PR 的 URL> Status="In progress" Priority=P1 Size=S Sprint="Sprint 1"
+scripts/project-status.sh <issue 或 PR 的 URL> Status="In progress" Priority=P1 Size=S
 ```
 
 看板的內建自動化（新增 issue 自動加入、關閉時自動設為 Done）無法由 API 設定，需要在網頁的 Project 設定的 Workflows 裡手動開啟。沒開之前，由協調者用腳本維護。
 
-### Issue 類別
+### Ticket
 
-| 類別 | 怎麼標記 | 來源 | 用途 |
-|---|---|---|---|
-| Task | Issue type | `to-tickets` | 一張 tracer-bullet ticket |
-| Bug | Issue type | 人或 `triage` | 非預期的行為 |
-| Feature | Issue type | 人或 `triage` | 新功能的想法 |
-| Spec | Issue type | `to-spec` | 規格 |
-| Decision | Issue type | `wayfinder`、`grill-with-docs` | 待定案的決策，ADR 候選 |
-| Research | Issue type | `research` | 查證與調查 |
-| Chore | Issue type | 人 | 依賴、設定、重構、CI |
-
-七個類別都是 org 的 Issue type，建立時用 `gh issue create --type <類別>`。每個類別在 `.github/ISSUE_TEMPLATE/` 都有對應的網頁表單。
+Issue 只分一種：ticket（`to-tickets` 產生的 tracer-bullet ticket，網頁表單是 `.github/ISSUE_TEMPLATE/task.yml`）。spec、bug 與決策照各 skill 的指示建立，不另設類別；要篩選用標籤（見 [triage-labels.md](./triage-labels.md)）。
 
 ### 狀態流轉
 
@@ -52,7 +41,7 @@ scripts/project-status.sh <issue 或 PR 的 URL> Status="In progress" Priority=P
 
 ### 1. Ticket（planner 交給 worker）
 
-正文格式照 `to-tickets`，用 Issue form 的 Task：
+正文格式照 `to-tickets`，用 `task.yml` 表單：
 
 ```markdown
 ## Parent
